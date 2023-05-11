@@ -1,7 +1,7 @@
 import "./App.css";
 import ColorButton from "./components/ColorButton";
 import Button from "./components/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function App() {
   let name = "김명아";
@@ -44,6 +44,18 @@ function App() {
     setBtn(btn + 1);
     console.log(btn);
   };
+
+  useEffect(() => {
+    console.log("state 상태 업데이트");
+  }, [btn]);
+
+  const [color, setColor] = useState("yellow");
+  let changeColor = (color) => {
+    setColor(color);
+  };
+  useEffect(() => {
+    console.log("state 업데이트!!!");
+  }, [color]);
   return (
     <div className="App">
       <p>안녕하세요. 저의 이름은 {name}입니다</p>
@@ -71,6 +83,13 @@ function App() {
       <p>{btn}</p>
       <button onClick={addBtn}>UP</button>
       {/* 실행 할 함수를 {}에 넣기*/}
+      <h2>Color App</h2>
+      <p>버튼을 누르면 박스 컬러가 변경되게 하기(useState 활용)</p>
+      <div className="colorBox" style={{ backgroundColor: color }}>
+        <button onClick={() => setColor("red")}>red</button>
+        <button onClick={() => setColor("green")}>green</button>
+        <button onClick={() => setColor("blue")}>blue</button>
+      </div>
     </div>
   );
 }

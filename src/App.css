@@ -11,3 +11,15 @@
   display: flex;
   justify-content: center;
 }
+
+.colorBox {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.colorBox button {
+  width: 50px;
+  height: 20px;
+}
