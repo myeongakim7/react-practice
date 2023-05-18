@@ -114,7 +114,7 @@ function PostMap() {
   return (
     <div>
       <h2>map(함수)으로 반복하기</h2>
-      <p>jsx에서는 반복문을 for은 사용할 수 없고 map으로만 사용가능하다</p>
+      {/* <p>jsx에서는 반복문을 for은 사용할 수 없고 map으로만 사용가능하다</p> */}
       {/* 자바스크립트를 사용하기 위해서는 {} 중괄호가 필요함 html 안에서 jsx 사용하기  */}
       {posts.map((post, i) => {
         console.log(post);
@@ -151,7 +151,7 @@ function Like() {
             <button onClick={() => btnLike(i)}>좋아요</button>
             <span>&nbsp;{likes[i]}</span>
           </div>
-          // onclick 안에서 함수실행 함
+          // onclick 안에서 함수실행
         );
       })}
     </div>
