@@ -20,3 +20,11 @@
 <li>useState 활용하여 버튼 클릭 시 박스 색깔 바꾸기</li>
   <p>=>useEffect는 처음에 컴포넌트가 실행(마운트)될 때와 배열 안의 state가 변경(업데이트)될 때 실행됨</p>
 </ul>
+<h3>23/05/18</h3>
+<ul>
+<li>map()함수를 활용해 반복문 만들기</li>
+  <p>=>jsx에서는 for 사용불가, map으로 사용</p>
+  <p>=>map(변수, 키값=배열값)</p>
+  <li>map함수 응용) '좋아요'버튼 클릭 시 숫자 증가 </li>
+<img src="../capture.png" alt="capture" />
+</ul>
