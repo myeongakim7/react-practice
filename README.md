@@ -1,3 +1,4 @@
+<h2>React 연습</h2>
 <h3>23/05/09</h3>
 <ul>
 <li>컴포넌트</li>
@@ -26,5 +27,5 @@
   <p>=>jsx에서는 for 사용불가, map으로 사용</p>
   <p>=>map(변수, 키값=배열값)</p>
   <li>map함수 응용) '좋아요'버튼 클릭 시 숫자 증가 </li>
-<img src="../capture.png" alt="capture" />
 </ul>
+
