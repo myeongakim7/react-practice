@@ -56,6 +56,15 @@ function App() {
   useEffect(() => {
     console.log("state 업데이트!!!");
   }, [color]);
+
+  // map 함수 사용
+  const num = [1, 2, 3];
+  let result = num.map(function (n) {
+    console.log(n); // 1,2,3
+    return n * 2;
+  });
+  console.log(result);
+
   return (
     <div className="App">
       <p>안녕하세요. 저의 이름은 {name}입니다</p>
@@ -90,6 +99,61 @@ function App() {
         <button onClick={() => setColor("green")}>green</button>
         <button onClick={() => setColor("blue")}>blue</button>
       </div>
+      <p>{changeColor}</p>
+      <PostMap />
+      <Like />
+    </div>
+  );
+}
+
+// 컴포넌트를 만들고 App 컴포넌트에 추가한다. 맨 아래 export는 App만 입력하기
+function PostMap() {
+  // map 함수를 이용해 jsx에서 html 반복하기
+  const posts = ["첫번째 글", "두번째 글", "세번째 글"];
+
+  return (
+    <div>
+      <h2>map(함수)으로 반복하기</h2>
+      <p>jsx에서는 반복문을 for은 사용할 수 없고 map으로만 사용가능하다</p>
+      {/* 자바스크립트를 사용하기 위해서는 {} 중괄호가 필요함 html 안에서 jsx 사용하기  */}
+      {posts.map((post, i) => {
+        console.log(post);
+        return (
+          <p key={i}>
+            {i}.{post}
+          </p>
+        );
+      })}
+      {/* 이렇게 하면 return전에 변수를 선언하지 않고 html 안에서 바로 사용가능 */}
+    </div>
+  );
+}
+
+// '좋아요'버튼 누르면 숫자를 1개씩 증가시키기
+function Like() {
+  // state 상태 설정
+  const [likes, setLike] = useState([0, 0, 0]);
+
+  // 좋아요 버튼 함수
+  const btnLike = (i) => {
+    let copy = [...likes]; // likes의 배열 복사
+    copy[i] += 1; // 클릭한 버튼의 번호 증가
+    setLike(copy);
+  };
+
+  return (
+    <div>
+      <h2>map()함수를 통해 '좋아요'버튼 누르면 숫자를 1개씩 증가시키기 </h2>
+      {likes.map((like, i) => {
+        console.log(like);
+        return (
+          <div className="likeStyle">
+            <button onClick={() => btnLike(i)}>좋아요</button>
+            <span>&nbsp;{likes[i]}</span>
+          </div>
+          // onclick 안에서 함수실행 함
+        );
+      })}
     </div>
   );
 }
